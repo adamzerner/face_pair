@@ -1,0 +1,32 @@
+<!-- ng-repeat="person in quiz.people" -->
+<div class="panel panel-default">
+	<div class="panel-body">	
+		<div class="form-group">
+			<label>Name</label>
+			<input 	type="text"
+							name="personName"
+							formName="personInput"
+							class="form-control"
+							ng-model="person.name"
+							required
+							inline-validate>
+		</div>
+		<div class="form-group">
+			<label>Images</label>
+			<p>
+				<img ng-repeat="image in person.images" src="{{image.url}}" height="150" width="150" class="picture">
+			</p>
+			<button 	ng-click='form.initializeFilePicker(person)'
+								name="images"
+								id='filePicker'
+								class="btn btn-default">
+								Upload Images
+			</button>
+		</div>
+		<button type="button" 
+						class="btn btn-default btn-xs"
+						ng-click="form.removePerson(person)">
+				Remove Person <span class="glyphicon glyphicon-minus"></span>
+		</button>
+	</div>
+</div>

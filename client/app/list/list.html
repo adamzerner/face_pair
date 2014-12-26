@@ -1,0 +1,16 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+	<div class="page-header">
+		<h1>Quizzes</h1>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="quiz in list">
+			<a href="/quiz/{{quiz._id}}">{{quiz.quizName}}</a>
+			<p class="pull-right">
+				<button class="btn btn-link skinny"><a href="/form/edit/{{quiz._id}}">Edit</a></button> | 
+				<button class="btn btn-link skinny" ng-click="l.delete(quiz._id)">Delete</button>
+			</p>
+		</li>
+	</ul>
+</div>

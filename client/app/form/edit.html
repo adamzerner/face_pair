@@ -1,0 +1,41 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+	<div class="page-header">
+    <h1>Edit Quiz</h1>
+  </div>
+
+  <form name="quizForm"
+        ng-submit="quizForm.$valid && 
+                  !form.missingImage() && 
+                  form.update()" 
+        novalidate>
+    
+    <div class="form-group">
+      <label>Quiz Name</label>
+      <input  type="text"
+              name="quizName"
+              class="form-control" 
+              ng-model="quiz.quizName"
+              required
+              inline-validate>
+    </div>
+
+    <label>People</label>
+    <ng-form name="personInput" ng-repeat="person in quiz.people">
+      <person-input></person-input>
+    </ng-form>
+    
+    <button type="button" 
+            class="btn btn-default btn-block"
+            ng-click="form.addPerson()">
+        Add Person <span class="glyphicon glyphicon-plus"></span>
+    </button>
+    
+    <button type="submit" 
+            class="btn btn-primary btn-block"
+            ng-disabled="quizForm.$invalid || form.missingImage()">
+        Update quiz
+    </button>
+  </form>
+</div>

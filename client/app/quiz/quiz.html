@@ -1,0 +1,44 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+	<div class="well">
+		<h1 class="center">Quiz: {{quiz.quizName}}</h1>
+	</div>
+	<div id="quiz" ng-show="quiz.people.length > 0">
+		<div class="page-header">
+			<h1>
+				Choose: {{ personToChoose }}
+				<span class="pull-right">Score: {{ score }}/{{ answered }}</span>
+			</h1>
+		</div>
+		<div class="row">		
+			<div class="col-md-3 col-sm-6 col-xs-6 img-container" ng-repeat="person in quiz.people | orderBy:'num'">
+				<div class="img-border">
+					<img	class="img-thumbnail quiz-thumbnail" 
+								src="{{person.images[0].url }}"
+								personName="{{person.name}}"
+								choose
+								 />
+								 {{ $index }}
+				</div>
+			</div>
+		</div>
+		<button 
+			class="btn btn-primary btn-block"
+			ng-click="q.next()">
+			Next
+		</button>
+	</div>
+	<div id="theEnd" ng-show="quiz.people.length === 0">
+		<br /><br /><br /><br />
+		<h1>The End</h1><hr />
+		<h1>Final Score: {{score}}/{{answered}}<h1><hr />
+		<button 
+			class="btn btn-primary btn-block btn-lg"
+			ng-click="q.playAgain()">
+			Play Again
+		</button>
+	</div>
+</div>
+
+<!-- thumbnail quiz-thumbnail -->

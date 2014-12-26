@@ -1,0 +1,25 @@
+.quiz-thumbnail {
+	cursor: pointer;
+	margin: 15px 0;
+	border: 2px solid #eee;
+	box-shadow: 2px 2px 2px #eee 0.2;
+}
+
+.green {
+	border: 2px solid green;
+	-webkit-filter: grayscale(0%);
+	-moz-filter: grayscale(0%);
+	filter: grayscale(0%);
+
+}
+.red {
+	border: 2px solid red;
+	-webkit-filter: grayscale(65%) !important;
+	-moz-filter: grayscale(0%);
+	filter: grayscale(0%);
+}
+.graying:not(.green) {
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
