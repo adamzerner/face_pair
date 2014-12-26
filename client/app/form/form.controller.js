@@ -84,8 +84,3 @@ angular.module('facePairApp')
     };
 
   });
-
-// Access Key ID:
-// AKIAJDXKHOOASZ7VGB5Q
-// Secret Access Key:
-// 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
